@@ -1,0 +1,28 @@
+{%extends "header.html"%}
+{% block content %}
+
+<style>
+        .cr{
+                 display: flex;
+                 flex-flow: row;
+                 margin: 15px;
+                 margin-left: 50px;
+                 
+             }
+     .cast-name{
+               
+                 margin: 10px;
+                 margin-top: 40px;
+
+         }
+</style>
+<div class="cast">
+    <h1 style="margin: 20px;"> Cast:</h1>
+    {%for c in top_cast%}
+   <div class="cr">
+    <img src="{{c['profile_img']}}" alt="not available " style="width:100px;border-radius: 50%;">
+    <a href="{{c['profile_url']}}" ><h1 class="cast-name" style="color: #14181f;">{{c['original_name']}}</h1></a>
+
+   </div> 
+    {% endfor %} 
+    {%endblock%}

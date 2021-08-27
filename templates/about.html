@@ -1,0 +1,159 @@
+
+{%extends "header.html"%}
+{% block content %}
+<style>
+  .heading{
+    margin-left: 7%;
+    font-size: xx-large;
+  }
+  .para
+  {
+    font-size:x-large; 
+    margin-left: 7%; 
+    margin-bottom: 10px ; 
+    margin-right: 4%;
+
+  }
+  @media only screen and (max-width:480px)
+  {
+    .heading{
+      font-size: x-large;
+    }
+    .para{
+      font-size: large;
+    }
+    
+  }
+  
+
+</style>
+<div>
+<h1 class="heading">
+   <span style="font-weight:630">About Us:</span> 
+   <br>  <span style="font-weight:630">Creators:</span> 
+    
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Sakthi Murugan
+<br>&nbsp;&nbsp;&nbsp;&nbsp;Sangeetha
+<br><span style="font-weight:630">Gmail:</span> popmovies.help@gmail.com
+<br><span style="font-weight:630">GitHub:</span><a href="#" style="font-size: xx-large;">click here</a>
+</h1>
+<h1 class="heading"><span style="font-weight:630">About the website:</span></h1>
+<p class="para" >
+    *This webiste is hosted through Heroko.<br>
+    *The movie images,details,ect is got through Themoviedb api.<br>
+    *This webiste is responive and works almost in all device.<br>
+    *Backend is done using python and Flask module is used for web application framework.<br>
+</p>
+<h1 class="heading"><span style="font-weight:630">Website Images:</span></h1>
+
+</div>
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+
+<link rel="stylesheet" href="../package/swiper-bundle.min.css">
+
+<style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    *{
+     
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper-container {
+      width: 300px;
+      height: 300px;
+      position: relative;
+      margin-left: 200px;
+      
+      margin-top: 10px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+
+    }
+    .ln{
+      font-size:x-large; 
+      margin-left: 7%; 
+      margin-bottom: 10px ; 
+      margin-top: 20px; 
+      padding-bottom: 10px;
+    }
+    @media only screen and (max-width:600px)
+  {
+    .ln{
+      font-size: large;
+      margin-left: 6%; 
+      margin-right: 2%;
+
+    }
+    .swiper-container 
+
+      {
+        margin-left: 32px;
+
+      }
+  }
+  </style>
+
+<div class="swiper-container" >
+    <div class="swiper-wrapper">
+   
+      <div class="swiper-slide" style="background-image:url(/static/img1.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img2.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img3.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img4.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img5.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img6.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img7.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img8.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img9.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img10.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img11.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img12.jpg)"></div>
+      <div class="swiper-slide" style="background-image:url(/static/img13.jpg)"></div>
+
+
+
+
+    </div>
+    <div class="swiper-pagination" style="margin-bottom: -30px;"></div>
+    
+</div>
+
+<script src="../package/swiper-bundle.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: true,
+        slideShadows: true,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },loop:true,
+
+
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+</script>
+
+
+<p class="ln">
+    These images are from this website application.
+</p>
+
+{%endblock%}

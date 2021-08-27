@@ -1,0 +1,238 @@
+{%extends "header.html"%}
+{% block content %}
+
+    <style>
+      .p1{
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        color: #000;
+      }
+    .poster{
+      width: 25vw;
+      height: 30vw;
+      float: left;  
+      margin: 1px; 
+      margin-right: 10px;
+    }  
+    .h{
+        margin-left: 10px;
+        font-weight: bolder;
+        font-family: Tahoma, Verdana, sans-serif;
+    }    
+
+     .cr{
+                 display: flex;
+                 flex-flow: row;
+                 margin: 15px;
+                 
+             }
+     .cast-name{
+               
+                 margin: 10px;
+                 margin-top: 40px;
+
+         }
+        @media only screen and (min-width: 320px)
+        {
+           .yt{
+               margin: 13px;
+               height: 200px;
+           }
+           .p1{
+               font-size: small;
+           }
+       
+        }
+       
+           
+       @media only screen and (min-width:600px) and (max-width:950px)
+       {
+        .yt{
+                
+                height:300px;
+                margin: 20px;
+                
+            }
+           
+       }
+          
+           @media only screen and (min-width: 992px)
+       {
+           .r1{
+                 display: flex;
+                 flex-flow: row;
+             }
+             .c1{
+                 display: flex;
+                 flex-flow: column;
+                 font-size: xx-large;
+             }
+             .yt{
+                
+                 height:500px;
+                 margin: 50px;
+             }
+            .p1{
+                font-size: 27px;
+            } 
+             
+       
+       }
+       @media only screen and (min-width:600px) and (max-width:991px)
+       {
+         .poster{
+           height: 25vw;
+
+         }
+         .p1{
+                font-size: 20px;
+            } 
+
+       }
+ 
+            
+            
+         </style>
+         
+       <div class="r1" style="background-color: rgb(248, 239, 239); border: 3px solid rgb(0, 0, 0); margin: 4px; ">
+           <div class="c1">
+               <img src="{{details['poster_path']}}" ALIGN=”left”  alt="Los Angeles" class="poster" >
+           </div>
+           <div class="c1" >
+               <p class="p1">
+                  
+                   <span style="font-weight:630">Title:</span> {{details['movie_name']}}.<br>
+                   <span style="font-weight:630">Genre:</span> {{details['genre']}}.<br>
+                   <span style="font-weight:630">ImbdRating:</span> {{details['rating']}}<br>
+                   <span style="font-weight:630">Director:</span> {{details['director']}}.<br>
+                   <span style="font-weight:630">Productions:</span> {{details['production_company']}}.<br>
+                   <span style="font-weight:630">Realese Date:</span> {{details['release_date']}}<br>
+                   <span style="font-weight:630">Run Time:</span> {{details['runtime']}}<br>
+                   <span style="font-weight:635">Overview:</span> {{details['overview']}}<br>
+               </p>
+       
+           </div>
+       </div>
+       <h1 class="h">
+        Trailer: 
+       </h1>  
+       <div class="r2">
+      
+      <iframe width="93%"  src="{{details['trailer link']}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="yt"></iframe>
+      </div>
+      <h1 class='h'>
+          Watch Link:
+      </h1>
+      <h1 class='h' style="margin-left: 50px;">
+        <a href="{{watch_link['amazon prime link']}}">Amazon prime</a><br>
+        <a href="{{watch_link['netflix']}}">Netflix</a><br>
+        <a href="{{watch_link['hotstar link']}}">Hotstar</a>
+      </h1>
+      <h1 class='h'>
+        Songs:
+      </h1>
+      <h1 class='h' style="margin-left: 50px;">
+        <a href="{{songs['spotify link']}}">Spotify</a><br>
+        <a href="{{songs['youtube songs link']}}">YouTube</a>
+        
+      </h1>
+      <h1 class="h">Top Cast:</h1>
+
+      <div class="cast">
+        {%for c in top_five_cast%}
+       <div class="cr">
+        <img src="{{c['profile_img']}}" alt="not available " style="width:100px;border-radius: 50%;">
+        <a href="{{c['profile_url']}}" ><h1 class="cast-name" style="color: rgb(73, 58, 58);">{{c['original_name']}}</h1></a>
+    
+       </div> 
+        {% endfor %} 
+
+      
+       <a href="/cast" style="font-size: xx-large; color: rgb(255, 38, 38); margin: 20px;">Show More</a>
+    
+    </div>  
+
+
+
+    </div>
+      
+       
+       
+       
+      <!DOCTYPE html>
+      <html lang="en">
+      
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+      
+        <link rel="stylesheet" href="../package/swiper-bundle.min.css">
+      
+        <style>
+         
+      
+          .swiper-container {
+            width: 100%;
+            padding-top: 50px;
+            padding-bottom: 50px;
+          }
+      
+          .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            width: 300px;
+            height: 300px;
+            -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0006);
+      
+          }
+        </style>
+      </head>
+      
+      <body>
+        <h1 class="h">
+          Galary: 
+      </h1>  
+        <div class="swiper-container">
+        
+          <div class="swiper-wrapper">
+            {% for images in galery %}
+              <div class="swiper-slide" style="background-image:url({{images}})"></div>
+            {% endfor %} 
+  
+             
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+      
+        <script src="../package/swiper-bundle.min.js"></script>
+      
+        <script>
+          var swiper = new Swiper('.swiper-container', {
+            effect: 'coverflow',
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: 'auto',
+            coverflowEffect: {
+              rotate: 20,
+              stretch: 0,
+              depth: 200,
+              modifier: 1,
+              slideShadows: true,
+            },
+            loop:true,
+            
+          });
+        </script>
+      </body>
+      
+      </html>
+      </div>
+    
+
+</body>
+</html>
+
+{%endblock%}

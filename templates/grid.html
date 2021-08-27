@@ -1,0 +1,361 @@
+{%extends "header.html"%}
+{% block content %}
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .form-group input{
+        float: left;
+        margin: 11px;
+        
+    }
+
+    .dropdown{
+        display: flex;
+        flex-flow: row;
+    }
+
+    .ls a{
+        font-size: xx-large;
+    }
+      
+      .column {
+       
+        float: left;
+        width: 24%;
+        padding: 10px;
+        height: 300px; 
+        
+      }
+      
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+ 
+
+
+      
+      @media screen and (max-width: 600px) {
+        .row{
+          width:96%;
+          margin-left:16px;
+         
+       }
+        .column {
+          width: 48%;
+          height: 250px;
+        }
+        .movie_image{
+            height: 72%;
+            width: 98%;
+            margin-bottom:1px;
+      
+      
+        }
+        .movie_name
+        {
+            font-size: large;
+        }
+      }
+       @media only screen and (min-width: 1000px)
+      {
+        .row{
+          width:96%;
+
+          margin-left:54px;
+         
+       }
+       .column {
+          height: 400px;
+        }
+          .movie_image{
+              width: 95%;
+              height: 65%;
+              margin: 7px;
+              margin-bottom:1px;
+          }
+      } 
+      @media only screen and (min-width:600px) and (max-width:999px)
+
+      {
+        .movie_name{
+          font-size: large
+        }
+        .column {
+          width: 24%;
+          height: 200px;
+        }
+        .row{
+          width:96%;
+
+          margin-left:25px;
+         
+       }
+          .movie_image{
+            height: 65%;
+            width: 98%;
+            margin-bottom:1px;
+      
+           }
+       
+      
+      }
+      @media only screen and (min-width:793px)
+    {
+        .form-group input{
+          width: 500px;
+        
+    }
+     }
+     @media only screen and (min-width:593px) and (max-width:793px)
+    {
+        .form-group input{
+          width: 300px;
+        
+    }
+     } 
+     @media only screen and (min-width:493px) and (max-width:593px)
+    {
+        .form-group input{
+          width: 200px;
+        
+    }
+     } 
+
+     @media only screen and (min-width:393px) and (max-width:493px)
+    {
+        .form-group input{
+          width: 200px;
+        
+    }
+     }
+     @media only screen and (min-width:320px) and (max-width:393px)
+    {
+        .form-group input{
+          width: 130px;
+        
+    }
+     }  
+     @media only screen and (max-width:319px)
+    {
+        .form-group input{
+         display: none;
+        
+    }
+     } 
+   
+      </style>
+      
+      <form action="/r" method="POST">
+        <div class="dropdown">
+            <div class="d">
+                <select style="font-size: large; margin-top: 13px; margin-left: 10px; color:  rgb(73, 58, 58);;" name="genre"> 
+                   {% if genre=='popular_movie' %}
+                   
+                      <option selected>Genre</option>
+                   {% else %}
+                                                       
+                      <option>Genre</option>
+                   {% endif %}
+  
+                   {% if genre=='Action' %}
+                   
+                      <option selected>Action</option>
+                   {% else %} 
+                   
+                      <option>Action</option>
+                   {% endif %}
+                   
+                   {% if genre=='Adventure' %}
+                   
+                      <option selected>Adventure</option>
+                   {% else %}
+                   
+                      <option>Adventure</option> 
+                   {% endif %}   
+                   
+                   {% if genre=='Animation' %}
+                   
+                      <option selected>Animation</option>
+                   {% else %}
+                   
+                      <option>Animation</option> 
+                   {% endif %}
+                    
+                   {% if genre=='Comedy' %}
+                   
+                      <option selected>Comedy</option>
+                   {% else %}
+                   
+                      <option>Comedy</option> 
+                   {% endif %}
+                   
+
+
+                   {% if genre=='Crime' %}
+                   
+                      <option selected>Crime</option>
+                   {% else %}
+                   
+                      <option>Crime</option> 
+                   {% endif %}
+
+                   {% if genre=='Documentary' %}
+                   
+                      <option selected>Documentary</option>
+                   {% else %}
+                   
+                      <option>Documentary</option> 
+                   {% endif %}
+
+                   {% if genre=='Drama' %}
+                   
+                      <option selected>Drama</option>
+                   {% else %}
+                   
+                      <option>Drama</option> 
+                   {% endif %}
+
+                   {% if genre=='Family' %}
+                   
+                      <option selected>Family</option>
+                   {% else %}
+                   
+                      <option>Family</option> 
+                   {% endif %}
+
+                   {% if genre=='Fantasy' %}
+                   
+                      <option selected>Fantasy</option>
+                   {% else %} 
+                   
+                       <option>Fantasy</option> 
+                   {% endif %}
+
+                   {% if genre=='History' %}
+                   
+                      <option selected>History</option>
+                   {% else %}
+                   
+                      <option>History</option> 
+                   {% endif %}
+
+                   {% if genre=='Horror' %}
+                   
+                      <option selected>Horror</option>
+                   {% else %}
+                   
+                      <option>Horror</option> 
+                   {% endif %}
+
+                   {% if genre=='Music' %}
+                   
+                      <option selected>Music</option>
+                   {% else %}
+                   
+                       <option>Music</option> 
+                   {% endif %}
+                      
+                   {% if genre=='Mystery' %}
+                   
+                      <option selected>Mystery</option>
+                   {% else %}
+                   
+                      <option>Mystery</option> 
+                   {% endif %}
+
+                   {% if genre=='Romance' %}
+                   
+                      <option selected>Romance</option>
+                   {% else %}
+                   
+                      <option>Romance</option> 
+                   {% endif %}
+ 
+                   {% if genre=='Science Fiction' %}
+                   
+                      <option selected>Science Fiction</option>
+                   {% else %}
+                   
+                      <option>Science Fiction</option> 
+                   {% endif %}
+
+                   {% if genre=='TV Movie' %}
+                   
+                      <option selected>TV Movie</option>
+                   {% else %}
+                   
+                      <option>TV Movie</option> 
+                   {% endif %}
+
+                   {% if genre=='Thriller' %}
+                   
+                      <option selected>Thriller</option>
+                   {% else %}
+                   
+                      <option>Thriller</option> 
+                   {% endif %}
+
+                   {% if genre=='War' %}
+                   
+                      <option selected>War</option>
+                   {% else %}
+                   
+                      <option>War</option> 
+                   {% endif %}
+
+                   {% if genre=='Western' %}
+                   
+                      <option selected>Western</option>
+                   {% else %}
+                   
+                      <option>Western</option>
+                   {% endif %}   
+
+                    
+            
+            
+            
+                </select>
+            </div>
+            <div class="form-group" >
+                <input type="text" class="form-control" placeholder="Search" name="search" value="{{search}}">
+                <button type="submit" class="btn btn-default" style="margin: 11px;">Submit</button>
+
+            </div>
+              
+        </div>
+
+      </form> 
+ 
+      
+    <div class="row">
+        {% for i in movie_names %} 
+
+            <div class="column">
+                <a href="{{i[1]}}"><img src={{i[1]}} alt="img" class="movie_image"></a>
+                <a href="/movie/{{i[2]}}"><h2 class="movie_name" style="text-align:center; overflow: hidden;  font-family:Trebuchet MS, Helvetica, sans-serif; color: rgb(73, 58, 58);">{{i[0]}}</h2></a>
+            </div>
+        {% endfor %}
+
+      </div>
+
+        <div>
+            <ul class="pager">
+              <li><a href="/p">
+                  <span class="glyphicon glyphicon-chevron-left"></span>
+                  <span class="sr-only">Previous</span>
+              </a></li>
+              <li><a href="/n">
+                  <span class="glyphicon glyphicon-chevron-right"></span>
+                  <span class="sr-only">Next</span>
+              </a></li>
+            </ul>    
+          </div>
+        
+  
+  </html>
+
+{%endblock%}
