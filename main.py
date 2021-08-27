@@ -77,8 +77,8 @@ def l():
           d3=0
           d4=0
           movie_names,d2,d3=get_movies_search('popular_movie','',0)
-          view='list'  
-  
+          with open("file.text", "w") as file:
+                file.write("list")   
           return render_template('list.html',movie_names=movie_names,genre=genre,search=search) 
 
 @app.route('/n')
@@ -93,8 +93,9 @@ def n():
      
      
         movie_names,d2,d3=get_movies_search(genre,search,d3)
-    return render_template(view +'.html',movie_names=movie_names,genre=genre,search=search) 
-
+    with open("file.text", "r") as file:    
+            data = file.readlines()
+    return render_template(data[0] +'.html',movie_names=movie_names,genre=genre,search=search) 
 
 
 
@@ -117,8 +118,9 @@ def p():
 
 
         movie_names,d2,d3=get_movies_search(genre,search,ind[pos])
-    return render_template(view +'.html',movie_names=movie_names,genre=genre,search=search) 
-
+    with open("file.text", "r") as file:    
+            data = file.readlines()
+    return render_template(data[0] +'.html',movie_names=movie_names,genre=genre,search=search) 
 
 @app.route("/r" ,methods=['POST'])
 def r():
@@ -130,7 +132,9 @@ def r():
         genre=request.form['genre']
         search=request.form['search']
         movie_names,d2,d3=get_movies_search(genre,search,d3)
-        return render_template(view +'.html',movie_names=movie_names,genre=genre,search=search) 
+        with open("file.text", "r") as file:
+            data = file.readlines()
+        return render_template(data[0] +'.html',movie_names=movie_names,genre=genre,search=search) 
        
 @app.route('/grid')
 def grid():
@@ -145,7 +149,8 @@ def grid():
           d3=0
           d4=0
           movie_names,d2,d3=get_movies_search('popular_movie','',0)
-          view='grid'  
+          with open("file.text", "w") as file:
+                file.write("grid")   
           return render_template('grid.html',movie_names=movie_names,genre=genre,search=search)     
      
 @app.route("/about")
