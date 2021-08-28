@@ -1,0 +1,14 @@
+Pop movies:
+ 	 A team project for Build2Learn by Sakthi & Sangeetha
+ABOUT:
+•	A movie website where you can see different movies and their description info
+•	The description includes movie’s trailer and song link, cast and crew involved, and a gallery which includes photos or cine clips from specified movie. 
+•	This website is built using Python’s Flask module as backend and HTML and CSS for frontend and the movie database API for retrieving movie information and uses sqlite3 for database management.
+VISIT:
+•	This website is hosted using Heroku
+
+ACKNOWLEDGEMENT:
+•	Flask module
+•	Real-python
+•	Sqlite3
+•	The movie database API
