@@ -21,5 +21,3 @@
 -[Sqlite3](https://docs.python.org/3/library/sqlite3.html)
 
 -[The movie database API](https://developers.themoviedb.org/3/getting-started/introduction)
-
-
