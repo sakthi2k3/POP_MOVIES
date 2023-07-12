@@ -1,5 +1,5 @@
 import  requests
-api_key="59d5ad58b6b388a288ba8ffa5f0c65ca"
+api_key="409732d450e88553cc42495c2e1b7fed"
 top_popular_movies ={}
 recent_movies={}
 home_page={}
